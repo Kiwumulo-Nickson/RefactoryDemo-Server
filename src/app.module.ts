@@ -17,6 +17,7 @@ import { EventsModule } from "./events/events.module";
 
 import { ChatModule } from "./chat/chat.module";
 import { HelpModule } from "./help/help.module";
+import { ChatGateway } from "./chat.gateway";
 
 @Global()
 @Module({
@@ -46,7 +47,7 @@ import { HelpModule } from "./help/help.module";
   ],
   exports: [AppService],
   controllers: [AuthController],
-  providers: [AppService],
+  providers: [AppService,ChatGateway],
 })
 export class AppModule {
   constructor(private readonly seedService: SeedService) {}
